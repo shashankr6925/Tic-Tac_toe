@@ -1,8 +1,8 @@
 let boxes = document.querySelectorAll(".box")
 let resetBtn = document.querySelector("#reset")
 let newGame = document.querySelector("#newGame")
-let  = messagebox = document.querySelector(".messagebox");
-let  = message = document.querySelector("#msg");
+let  messagebox = document.querySelector(".messagebox");
+let  message = document.querySelector("#msg");
 
 
 let turnO = false;
@@ -83,3 +83,4 @@ const checkWinner = () => {
 
 newGame.addEventListener("click" ,resetGame);
 resetBtn.addEventListener("click" ,resetGame);
+
