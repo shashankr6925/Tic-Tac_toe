@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+h1{
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+}
+
+body {
+    background-color: rgb(163, 245, 238);
+    text-align: center;
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5vmin;
+}
+
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem rgb(212 172 212) ;
+    font-size: 10vmin;
+    font-weight: 550;
+    color: rgb(211, 0, 0);
+    cursor: pointer;
+    border: 2px solid rgb(16, 155, 164);
+    background-color: rgb(236 249 169);
+}
+
+#reset{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: rgb(7, 17, 212);
+    color: rgb(245, 244, 244);
+    font-weight: 550;
+    border-radius: 0.6rem;
+    border: none;
+    cursor: pointer;
+}     
+
+#newGame{
+    padding: 1rem;
+    background-color: rgb(31, 212, 7);
+    color: rgb(238, 255, 0);
+    font-size: 1.3rem;
+    font-weight: 550;
+    border-radius: 0.6rem;
+    border: none;
+    cursor: pointer;
+}
+
+#msg{
+    color: #0022ff;
+    font-size: 7vmin;
+    font-weight: 600;
+    margin-bottom: 5rem;
+}
+
+.messagebox{
+    height: 100vmin;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hide{
+    display: none;
+}
