@@ -4,7 +4,7 @@ let newGame = document.querySelector("#newGame")
 let  messagebox = document.querySelector(".messagebox");
 let  message = document.querySelector("#msg");
 
-
+let count = 0 ;
 let turnO = false;
 
 const winPatterns = [
@@ -18,10 +18,11 @@ const winPatterns = [
     [6, 7, 8],
 ];
 
-const resetGame =()=>{
+const resetGame = () => {
     let turnO = false;
     enableBoxes();
     messagebox.classList.add("hide")
+    count = 0 ;
 
 
 }
@@ -41,24 +42,37 @@ boxes.forEach((box) => {
         }
         box.disabled = true;
 
+        count ++
         checkWinner();
+
+
+        if(count === 9 && messagebox.classList.contains ("hide")){
+            message.innerText = ("It's a draw . Play Again")
+            console.log("draw")
+            messagebox.classList.remove("hide");
+
+
+        }
     });
 });
 
-const disableBoxes = () =>{
-    for(let box of boxes){
+
+
+const disableBoxes = () => {
+    for (let box of boxes) {
         box.disabled = true;
     }
 }
 
-const enableBoxes = () =>{
-    for(let box of boxes){
+const enableBoxes = () => {
+    for (let box of boxes) {
         box.disabled = false;
         box.innerText = "";
+        box.style.backgroundColor ="";
     }
 }
 
-const showWinner = (winner) =>{
+const showWinner = (winner) => {
     message.innerText = `Congratulations, Winner is ${winner}`
     messagebox.classList.remove("hide");
     disableBoxes();
@@ -71,8 +85,12 @@ const checkWinner = () => {
         let pos3val = boxes[pattern[2]].innerText;
 
         if (pos1val !== "" && pos2val !== "" && pos3val !== "") {
-            if (pos1val ===pos2val && pos2val == pos3val) {
-                console.log("winner is",pos1val)
+            if (pos1val === pos2val && pos2val == pos3val) {
+                boxes[pattern[0]].style.backgroundColor = "yellow"
+                boxes[pattern[1]].style.backgroundColor = "yellow"
+                boxes[pattern[2]].style.backgroundColor = "yellow"
+
+                console.log("winner is", pos1val)
                 showWinner(pos1val);
             }
         }
@@ -81,6 +99,5 @@ const checkWinner = () => {
 }
 
 
-newGame.addEventListener("click" ,resetGame);
-resetBtn.addEventListener("click" ,resetGame);
-
+newGame.addEventListener("click", resetGame);
+resetBtn.addEventListener("click", resetGame);
